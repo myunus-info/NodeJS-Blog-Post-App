@@ -5,7 +5,6 @@ const {
   userValidationHandler,
 } = require('../middlewares/validators/userValidator');
 const userController = require('../controllers/user');
-const isAuth = require('../middlewares/isAuth');
 
 router.post(
   '/signup',
@@ -15,7 +14,5 @@ router.post(
 );
 
 router.post('/login', userController.login);
-
-router.post('/logout', isAuth, userController.logout);
 
 module.exports = router;

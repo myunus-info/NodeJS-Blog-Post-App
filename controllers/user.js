@@ -56,9 +56,3 @@ exports.login = async (req, res, next) => {
     return next(error);
   }
 };
-
-exports.logout = async (req, res, next) => {
-  delete req.userId;
-  console.log('From Router: ', req.userId);
-  res.status(200).json({ message: 'Success' });
-};
