@@ -24,7 +24,13 @@ router.get('/post/:postId', isAuth, postController.getPostById);
 
 router.get('/posts/:userId', isAuth, postController.getByUserId);
 
-router.patch('/post/:postId', isAuth, postController.updatePost);
+router.patch(
+  '/post/:postId',
+  isAuth,
+  isPostValid,
+  handlePostValidation,
+  postController.updatePost
+);
 
 router.delete('/post/:postId', isAuth, postController.deletePost);
 
